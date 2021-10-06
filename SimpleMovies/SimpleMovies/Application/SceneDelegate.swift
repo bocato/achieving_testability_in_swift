@@ -20,10 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func createTabBar() -> UITabBarController {
         
-        let listViewController = ListViewController(
-            nibName: "ListViewController",
-            bundle: Bundle(for: ListViewController.self)
-        )
+        let listViewController = ListViewController()
         listViewController.title = "Search"
         listViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         

@@ -1,25 +1,26 @@
 import Foundation
 
-enum NetworkError: Error {
-    case api(OMDBError)
-    case raw(Error)
-    case unexpected
-    case unknown
+protocol NetworkProtocol {
+    func getData(
+        from url: URL,
+        onQueue queue: DispatchQueue,
+        then: @escaping (Result<Data?, NetworkError>) -> Void
+    ) -> URLSessionDataTask
 }
-
-struct OMDBError: Codable {
-    let response: String
-    let error: String
-    
-    enum CodingKeys: String, CodingKey {
-        case response = "Response"
-        case error = "Error"
+extension NetworkProtocol {
+    func getData(
+        from url: URL,
+        then: @escaping (Result<Data?, NetworkError>) -> Void
+    ) -> URLSessionDataTask {
+        self.getData(
+            from: url,
+            onQueue: .main,
+            then: then
+        )
     }
-    
-    static let unknown = OMDBError(response: "False", error: "Unknown error.")
 }
 
-final class Network {
+final class Network: NetworkProtocol {
     
     // MARK: - Singleton
     

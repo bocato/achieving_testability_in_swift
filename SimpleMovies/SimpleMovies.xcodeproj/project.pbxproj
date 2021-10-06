@@ -11,7 +11,6 @@
 		E508030A23F9CFA10007C76A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E508030923F9CFA10007C76A /* SceneDelegate.swift */; };
 		E508031123F9CFA20007C76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E508031023F9CFA20007C76A /* Assets.xcassets */; };
 		E508031423F9CFA20007C76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E508031223F9CFA20007C76A /* LaunchScreen.storyboard */; };
-		E508031F23F9CFA20007C76A /* SimpleMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E508031E23F9CFA20007C76A /* SimpleMoviesTests.swift */; };
 		E508033323F9D0950007C76A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E508033123F9D0950007C76A /* ListViewController.swift */; };
 		E508033423F9D0950007C76A /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E508033223F9D0950007C76A /* ListViewController.xib */; };
 		E508033723F9D0A30007C76A /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E508033523F9D0A30007C76A /* FavoritesViewController.swift */; };
@@ -27,6 +26,11 @@
 		E5CC7BE623FA143A00B14D70 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC7BE523FA143A00B14D70 /* UIImageExtension.swift */; };
 		E5CC7BE923FA148B00B14D70 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC7BE823FA148B00B14D70 /* FavoritesManager.swift */; };
 		E5CC7BEF23FA395A00B14D70 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC7BEE23FA395A00B14D70 /* FavoriteTableViewCell.swift */; };
+		E5CC7BF223FA3FFF00B14D70 /* UIImageViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC7BF123FA3FFF00B14D70 /* UIImageViewExtensionTests.swift */; };
+		E5CC7BF523FA408E00B14D70 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC7BF423FA408E00B14D70 /* NetworkModels.swift */; };
+		E5CC7BFD23FA461400B14D70 /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC7BFC23FA461400B14D70 /* ListViewControllerTests.swift */; };
+		E5CC7C0023FA4C7300B14D70 /* FavoritesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC7BFF23FA4C7300B14D70 /* FavoritesViewControllerTests.swift */; };
+		E5CC7C2223FB7A6500B14D70 /* FavoritesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC7C2123FB7A6500B14D70 /* FavoritesManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +51,6 @@
 		E508031323F9CFA20007C76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E508031523F9CFA20007C76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E508031A23F9CFA20007C76A /* SimpleMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E508031E23F9CFA20007C76A /* SimpleMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMoviesTests.swift; sourceTree = "<group>"; };
 		E508032023F9CFA20007C76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E508033123F9D0950007C76A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E508033223F9D0950007C76A /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
@@ -64,6 +67,11 @@
 		E5CC7BE523FA143A00B14D70 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		E5CC7BE823FA148B00B14D70 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		E5CC7BEE23FA395A00B14D70 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		E5CC7BF123FA3FFF00B14D70 /* UIImageViewExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensionTests.swift; sourceTree = "<group>"; };
+		E5CC7BF423FA408E00B14D70 /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
+		E5CC7BFC23FA461400B14D70 /* ListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTests.swift; sourceTree = "<group>"; };
+		E5CC7BFF23FA4C7300B14D70 /* FavoritesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerTests.swift; sourceTree = "<group>"; };
+		E5CC7C2123FB7A6500B14D70 /* FavoritesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +126,9 @@
 		E508031D23F9CFA20007C76A /* SimpleMoviesTests */ = {
 			isa = PBXGroup;
 			children = (
-				E508031E23F9CFA20007C76A /* SimpleMoviesTests.swift */,
+				E5CC7BF023FA3FED00B14D70 /* Extensions */,
+				E5CC7C2023FB7A4D00B14D70 /* Managers */,
+				E5CC7BF923FA456A00B14D70 /* Scenes */,
 				E508032023F9CFA20007C76A /* Info.plist */,
 			);
 			path = SimpleMoviesTests;
@@ -203,6 +213,7 @@
 		E5CC7BC723F9E21300B14D70 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E5CC7BF323FA407E00B14D70 /* Models */,
 				E5CC7BB923F9D58900B14D70 /* Network.swift */,
 			);
 			path = Network;
@@ -248,6 +259,55 @@
 				E5CC7BEE23FA395A00B14D70 /* FavoriteTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E5CC7BF023FA3FED00B14D70 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC7BF123FA3FFF00B14D70 /* UIImageViewExtensionTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E5CC7BF323FA407E00B14D70 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC7BF423FA408E00B14D70 /* NetworkModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E5CC7BF923FA456A00B14D70 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC7BFA23FA457A00B14D70 /* List */,
+				E5CC7BFE23FA4C6300B14D70 /* Favorites */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E5CC7BFA23FA457A00B14D70 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC7BFC23FA461400B14D70 /* ListViewControllerTests.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		E5CC7BFE23FA4C6300B14D70 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC7BFF23FA4C7300B14D70 /* FavoritesViewControllerTests.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		E5CC7C2023FB7A4D00B14D70 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC7C2123FB7A6500B14D70 /* FavoritesManagerTests.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +363,7 @@
 					};
 					E508031923F9CFA20007C76A = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 						TestTargetID = E508030323F9CFA10007C76A;
 					};
 				};
@@ -363,6 +424,7 @@
 				E5CC7BBC23F9D66300B14D70 /* Constants.swift in Sources */,
 				E5CC7BD123F9FD0700B14D70 /* SearchResponse.swift in Sources */,
 				E508033723F9D0A30007C76A /* FavoritesViewController.swift in Sources */,
+				E5CC7BF523FA408E00B14D70 /* NetworkModels.swift in Sources */,
 				E5CC7BC023F9E05400B14D70 /* MoviesService.swift in Sources */,
 				E5CC7BCF23F9EE2100B14D70 /* AlertHelper.swift in Sources */,
 				E508033323F9D0950007C76A /* ListViewController.swift in Sources */,
@@ -374,7 +436,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E508031F23F9CFA20007C76A /* SimpleMoviesTests.swift in Sources */,
+				E5CC7C0023FA4C7300B14D70 /* FavoritesViewControllerTests.swift in Sources */,
+				E5CC7BFD23FA461400B14D70 /* ListViewControllerTests.swift in Sources */,
+				E5CC7BF223FA3FFF00B14D70 /* UIImageViewExtensionTests.swift in Sources */,
+				E5CC7C2223FB7A6500B14D70 /* FavoritesManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +618,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SimpleMoviesTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -563,6 +629,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bocato.SimpleMoviesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleMovies.app/SimpleMovies";
@@ -574,6 +641,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SimpleMoviesTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

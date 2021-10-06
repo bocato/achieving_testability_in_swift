@@ -28,7 +28,7 @@ class ListTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    var imageLoadTask: URLSessionDataTask?
+    private var imageLoadTask: URLSessionDataTask?
     private var viewData: ListItemViewData?
     private var onAddFavoriteTapped: (() -> (Bool))?
     private var onRemoveFavoriteTapped: (() -> (Bool))?

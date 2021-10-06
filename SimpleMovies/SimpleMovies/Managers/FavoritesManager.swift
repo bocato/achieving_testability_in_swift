@@ -2,15 +2,43 @@ import Foundation
 
 typealias Favorite = SearchResponse.Result
 
-final class FavoritesManager {
+protocol FavoritesManagerProtocol {
+    var items: [Favorite] { get }
+    func load()
+    func isMarkedAsFavorite(_ favorite: Favorite) -> Bool
+    @discardableResult func add(_ favorite: Favorite) -> Bool
+    @discardableResult func remove(_ favorite: Favorite) -> Bool
+}
+
+final class FavoritesManager: FavoritesManagerProtocol {
     
     // MARK: - Singleton
     
-    static let shared = FavoritesManager()
+    static let shared: FavoritesManager = {
+        return FavoritesManager(
+            userDefaults: .standard,
+            jsonDecoder: .init(),
+            jsonEncoder: .init()
+        )
+    }()
+    
+    // MARK: - Dependencies
+    
+    private var userDefaults: UserDefaults
+    private var jsonDecoder: JSONDecoder
+    private var jsonEncoder: JSONEncoder
     
     // MARK: - Initialization
     
-    private init() {}
+    init(
+        userDefaults: UserDefaults,
+        jsonDecoder: JSONDecoder,
+        jsonEncoder: JSONEncoder
+    ) {
+        self.userDefaults = userDefaults
+        self.jsonDecoder = jsonDecoder
+        self.jsonEncoder = jsonEncoder
+    }
     
     // MARK: - Properties
     
@@ -19,10 +47,9 @@ final class FavoritesManager {
     // MARK: - Public Methods
     
     func load() {
-        let defaults = UserDefaults.standard
         guard
-            let data = defaults.value(forKey: Constants.favoritesKey) as? Data,
-            let decodedData = try? JSONDecoder().decode([Favorite].self, from: data)
+            let data = userDefaults.value(forKey: Constants.favoritesKey) as? Data,
+            let decodedData = try? jsonDecoder.decode([Favorite].self, from: data)
         else { return }
         items = decodedData
     }
@@ -48,11 +75,13 @@ final class FavoritesManager {
     
     // MARK: - Private Properties
     private func syncronize(with newItems: [Favorite]) -> Bool {
-        guard let encodedData = try? JSONEncoder().encode(newItems) else { return false }
-        UserDefaults.standard.set(encodedData, forKey: Constants.favoritesKey)
-        UserDefaults.standard.synchronize()
-        self.items = newItems
-        return true
+        guard let encodedData = try? jsonEncoder.encode(newItems) else { return false }
+        userDefaults.set(encodedData, forKey: Constants.favoritesKey)
+        let sincronizationSucceeded = userDefaults.synchronize()
+        if sincronizationSucceeded {
+            self.items = newItems
+        }
+        return sincronizationSucceeded
     }
     
 }

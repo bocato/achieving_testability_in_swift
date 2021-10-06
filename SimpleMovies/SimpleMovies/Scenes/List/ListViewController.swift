@@ -7,9 +7,32 @@ class ListViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Dependencies
+    
+    private let favoritesManager: FavoritesManagerProtocol
+    private let moviesService: MoviesServiceProtocol
+    
     // MARK: - Properties
     
     private var searchResults = [SearchResponse.Result]()
+    
+    // MARK: -  Initialization
+    
+    init(
+        favoritesManager: FavoritesManagerProtocol = FavoritesManager.shared,
+        moviesService: MoviesServiceProtocol = MoviesService()
+    ) {
+        self.favoritesManager = favoritesManager
+        self.moviesService = moviesService
+        super.init(
+            nibName: "ListViewController",
+            bundle: Bundle(for: ListViewController.self)
+        )
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle
     
@@ -27,7 +50,7 @@ class ListViewController: UIViewController {
     
     private func setup() {
         setupTableView()
-        FavoritesManager.shared.load()
+        favoritesManager.load()
     }
     
     private func setupTableView() {
@@ -57,10 +80,7 @@ class ListViewController: UIViewController {
     // MARK: - Search Logic
     
     func searchMovieWithTitle(_ title: String) {
-        
-        let service = MoviesService()
-        
-        service.searchMovies(withTitle: title) { [unowned self] result in
+        moviesService.searchMovies(withTitle: title) { [unowned self] result in
             switch result {
             case let .success(moviesFromSearch):
                 self.handleMoviesSearchSuccess(moviesFromSearch)
@@ -68,7 +88,6 @@ class ListViewController: UIViewController {
                 self.handleMoviesServiceError(serviceError)
             }
         }
-        
     }
     
     private func handleMoviesSearchSuccess(_ results: [SearchResponse.Result]) {
@@ -112,10 +131,11 @@ extension ListViewController: UITableViewDataSource {
             from: searchResult
         )
         
+        let favoritesManager = self.favoritesManager
         cell.setup(
             with: viewData,
-            onAddFavoriteTapped: { FavoritesManager.shared.add(searchResult) },
-            onRemoveFavoriteTapped: { FavoritesManager.shared.remove(searchResult) }
+            onAddFavoriteTapped: { favoritesManager.add(searchResult) },
+            onRemoveFavoriteTapped: { favoritesManager.remove(searchResult) }
         )
         
         return cell
@@ -125,7 +145,7 @@ extension ListViewController: UITableViewDataSource {
     private func buildViewData(
         from searchResult: SearchResponse.Result
     ) -> ListItemViewData {
-        let isFavorite = FavoritesManager.shared.isMarkedAsFavorite(searchResult)
+        let isFavorite = favoritesManager.isMarkedAsFavorite(searchResult)
         return ListItemViewData(
             searchResult: searchResult,
             isFavorite: isFavorite

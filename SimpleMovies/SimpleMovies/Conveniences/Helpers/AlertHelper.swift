@@ -1,6 +1,49 @@
 import UIKit
 
-enum AlertHelper {
+protocol AlertHelperProtocol {
+    static func presentChoiceAlert(
+        from controller: UIViewController,
+        title: String?,
+        message: String,
+        yesAction: @escaping () -> Void,
+        noAction: (() -> Void)?
+    )
+    static func presentSimpleAlert(
+        from controller: UIViewController,
+        title: String?,
+        message: String
+    )
+}
+extension AlertHelperProtocol {
+    static func presentChoiceAlert(
+        from controller: UIViewController,
+        title: String? = nil,
+        message: String,
+        yesAction: @escaping () -> Void,
+        noAction: (() -> Void)? = nil
+    ) {
+        self.presentChoiceAlert(
+            from: controller,
+            title: title,
+            message: message,
+            yesAction: yesAction,
+            noAction: noAction
+        )
+    }
+    static func presentSimpleAlert(
+        from controller: UIViewController,
+        title: String? = nil,
+        message: String
+    ) {
+        self.presentSimpleAlert(
+            from: controller,
+            title: title,
+            message: message
+        )
+    }
+}
+
+enum AlertHelper: AlertHelperProtocol {
     
     static func presentChoiceAlert(
         from controller: UIViewController,
